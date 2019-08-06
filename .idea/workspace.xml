@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d211ca06-4677-4bc7-a90f-1a5b68f0c046" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/controller/controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/page_render.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/router.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/statistics.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autoload.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/codebreaker_rack.rb" beforeDir="false" afterPath="$PROJECT_DIR$/application/codebreaker_rack.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/i18n.rb" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/i18n.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/locales/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/game.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/game.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/lose.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/lose.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/menu.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/menu.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/statistics.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/statistics.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/win.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/win.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/garage_big.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/images/garage_big.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/garage_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/images/garage_small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/lost.gif" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/images/lost.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/won.gif" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/images/won.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/assets/js/jquery.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563889338401</updated>
       <workItem from="1563889339668" duration="371000" />
-      <workItem from="1564644116291" duration="25247000" />
+      <workItem from="1564644116291" duration="25946000" />
     </task>
     <servers />
   </component>
