@@ -10,7 +10,7 @@ GEM
     byebug (11.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    codebreaker_vk (0.2.2)
+    codebreaker_vk (1.0.1)
     coderay (1.1.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.5)
@@ -30,7 +30,7 @@ GEM
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
     parallel (1.17.0)
-    parser (2.6.3.0)
+    parser (2.6.4.0)
       ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -62,9 +62,9 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
-    rubocop-performance (1.4.0)
+    rubocop-performance (1.4.1)
       rubocop (>= 0.71.0)
-    rubocop-rspec (1.34.0)
+    rubocop-rspec (1.35.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.1)
     ruby_parser (3.13.1)
@@ -83,7 +83,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundle-audit (~> 0.1.0)
-  codebreaker_vk (~> 0.2.2)
+  codebreaker_vk
   fasterer (~> 0.5.1)
   i18n (~> 1.6)
   overcommit (~> 0.48.0)

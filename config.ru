@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-class Racker
-  def call(env)
-    [200, { 'Content-Type' => 'text/plain' }, ['Something happens!']]
-  end
-end
+require_relative 'autoload'
 
-run Racker.new
+use Rack::Reloader
+use Rack::Static, urls: ['/public', '/node_modules'], root: './'
+use Routing
+use Rack::Session::Cookie, key: 'rack.session', secret: 'secret'
+
+run CodebreakerRack

@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem 'codebreaker_vk', '~> 0.2.2'
+gem 'codebreaker_vk'
 gem 'i18n', '~> 1.6'
 gem 'rack', '~> 2.0', '>= 2.0.7'
 

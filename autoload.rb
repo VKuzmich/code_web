@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-
-require 'erb'
 require 'i18n'
 require 'yaml'
-require 'pry'
+require 'rack'
+require 'erb'
 
 require 'codebreaker_vk'
 
 require_relative 'application/config/i18n'
-require_relative 'application/router'
+require_relative 'application/game_helper'
+require_relative 'application/game_process'
 require_relative 'application/codebreaker_rack'
+require_relative 'application/routing'
 
-I18n.config.load_path << Dir[File.expand_path('config/locales') + '/*.yml']
