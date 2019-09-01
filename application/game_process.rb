@@ -4,14 +4,14 @@ require_relative 'game_process'
 class GameProcess
   attr_reader :game, :round_result
 
-  include CodebreakerVk::Uploader
+  include CodebreakerVk::Database
   include GameHelper
 
-  EMPTY_SPACE_IN_RESULT = 'x'
-  GUESS_MARKS = {
-    success: CodebreakerVk::Game::GUESS_PLACE,
-    primary: CodebreakerVk::Game::GUESS_PRESENCE,
-    danger: EMPTY_SPACE_IN_RESULT
+  MISSED = 'x'
+  MARKS = {
+    success: CodebreakerVk::Game::GOT_IT,
+    primary: CodebreakerVk::Game::NOT_YET,
+    missed: MISSED
   }.freeze
 
   def initialize(request)
@@ -28,7 +28,7 @@ class GameProcess
     difficulty = register_difficulty
     return redirect_to(CodebreakerRack::URLS[:index]) unless registration_data_valid?(difficulty, user)
 
-    @request.session[:game] = CodebreakerVk::Game.new(difficulty, user)
+    @request.session[:game] = CodebreakerVk::Game.new(difficulty)
     redirect_to(CodebreakerRack::URLS[:game])
   end
 
@@ -39,10 +39,10 @@ class GameProcess
 
   def start_round
     validate_guess
-    return win if @game.win?(@guess.as_array_of_numbers)
-    return lose if @game.lose?(@guess.as_array_of_numbers)
+    return win if @game.win?(@guess.check(number))
+    return lose if @game.attempts.zero
 
-    @request.session[:result] = @game.start_round(@guess.as_array_of_numbers) if validate_guess
+    @request.session[:result] = @game.start_round(@guess.check(number)) if validate_guess
     redirect_to(CodebreakerRack::URLS[:game])
   end
 
@@ -50,15 +50,15 @@ class GameProcess
 
   def update_round_result_data
     @round_result = @request.session[:result]
-    fill_empty_space_in_result if @round_result.size < Codebreaker::Game::CODE_SIZE
+    fill_missed_in_result if @round_result.size < CodebreakerVk::Game::SECRET_CODE_LENGTH
   end
 
   def register_name
-    CodebreakerVk::GameUser.new(@request.params['player_name'])
+    CodebreakerVk::Game.new(name: @request.params['player_name'], difficulty: @request.params['difficulty'])
   end
 
   def register_difficulty
-    CodebreakerVk::Difficulty.find(@request.params['level'])
+    CodebreakerVk::DIFFICULTY_LEVEL.find(@request.params['difficulty'])
   end
 
   def registration_data_valid?(difficulty, user)
@@ -66,21 +66,22 @@ class GameProcess
   end
 
   def validate_guess
-    @guess = CodebreakerVk::CheckErrors.new(@request.params['guess'])
-    @guess.as_array_of_numbers if @guess.valid?
+    @guess = CodebreakerVk::Validation.new(@request.params['guess'])
+    @guess.check(number) if @guess.valid?
   end
 
-  def fill_empty_space_in_result
-    @round_result += Array.new(CodebreakerVk::Game::CODE_SIZE - @round_result.size) { GUESS_MARKS[:danger] }
+  def fill_missed_in_result
+    @round_result += Array.new(CodebreakerVk::Game::SECRET_CODE_LENGTH - @round_result.size) { MARKS[:danger] }
   end
 
   def win
-    save_to_db(@game.to_h)
+    save(@game.win?(true))
     @request.session[:game_over] = true
     redirect_to(CodebreakerRack::URLS[:win])
   end
 
   def lose
+    @game.attempts.zero
     @request.session[:game_over] = true
     redirect_to(CodebreakerRack::URLS[:lose])
   end

@@ -11,6 +11,7 @@ gem 'rack', '~> 2.0', '>= 2.0.7'
 group :development do
   gem 'bundle-audit', '~> 0.1.0'
   gem 'fasterer', '~> 0.5.1'
+  gem 'html2haml'
   gem 'overcommit', '~> 0.48.0'
   gem 'pry', '~> 0.12.2'
   gem 'pry-byebug', '~> 3.7'

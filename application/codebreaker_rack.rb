@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CodebreakerRack
-  include CodebreakerVk::Uploader
+  include CodebreakerVk::Database
   include GameHelper
 
   PAGES = {
@@ -39,7 +39,7 @@ class CodebreakerRack
   end
 
   def show_stats
-    CodebreakerVk::GameMessages.sort_db(load_db)
+    CodebreakerVk::GameMenu.stats
   end
 
   def session_destroy

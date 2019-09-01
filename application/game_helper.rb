@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module GameHelper
-  LAYOUT_PATH = File.expand_path('view/layouts/layout.html.erb', __dir__)
+  LAYOUT_PATH = File.expand_path('view/layouts/layout.html.haml', __dir__)
 
   def session_contain?(request, key)
     request.session.key?(key)
@@ -22,11 +22,11 @@ module GameHelper
   private
 
   def render_layout
-    ERB.new(File.read(LAYOUT_PATH)).result(binding)
+    Haml::Engine.new(File.read(LAYOUT_PATH)).render(binding)
   end
 
   def render_page_file(template)
-    path = File.expand_path("view/#{template}.html.erb", __dir__)
-    ERB.new(File.read(path)).result(binding)
+    path = File.expand_path("../../view/#{template}.html.haml", __FILE__)
+    Haml::Engine.new(File.read(path)).render(binding)
   end
 end

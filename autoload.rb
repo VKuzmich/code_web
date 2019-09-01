@@ -3,7 +3,7 @@
 require 'i18n'
 require 'yaml'
 require 'rack'
-require 'erb'
+require 'haml'
 
 require 'codebreaker_vk'
 
